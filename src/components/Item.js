@@ -3,24 +3,13 @@ import { useParams } from "react-router";
 
 const Item = () => { 
 
-    //pass philosopher's name as props into "fetch" callsc
-
     const {name} = useParams(); 
 
     const [title, setTitle] = useState('Carregando...')
 
     const [txt, setTxt] = useState('Carregando...')
 
-    const [img, setImg] = useState(''); 
-
-    // const fetchImgUrl = async (imgTitle) => {
-    //     const imgInfo = await fetch(`https://pt.wikipedia.org/w/api.php?action=query&origin=*&prop=imageinfo&iiprop=url&format=json&titles=${imgTitle}`, {mode: 'cors'}); 
-    //     const imgInfoJson = await imgInfo.json(); 
-    //     for (let obj in imgInfoJson.query.pages){
-    //         let url = imgInfoJson.query.pages[obj].imageinfo[0].url; 
-    //         setImg(url)
-    //     }
-    // }
+    const [img, setImg] = useState(`../imgs/${name}.svg`); 
 
     const getWikiData =  async () =>{
         const txtData = await fetch(`https://pt.wikipedia.org/w/api.php?action=query&origin=*&prop=extracts&format=json&exintro=&explaintext=&titles=${name}`, {mode: 'cors'} ); 
@@ -29,18 +18,30 @@ const Item = () => {
             setTitle(txtJson.query.pages[obj].title); 
             setTxt(txtJson.query.pages[obj].extract)
         }
+    }
 
-        // const imgData = await fetch(`https://pt.wikipedia.org/w/api.php?action=query&origin=*&prop=images&format=json&imlimit=2&titles=${name}`, {mode: 'cors'}); 
-        // const imgJson = await imgData.json();
-        // for (let obj in imgJson.query.pages){
-        //     let imgTitle = imgJson.query.pages[obj].images[1].title; 
-        //     fetchImgUrl(imgTitle)
-        // }
+    const getImgfromWiki = async () =>{
+        const imgData = await fetch(`https://pt.wikipedia.org/w/api.php?action=query&origin=*&prop=images&format=json&imlimit=2&titles=${name}`, {mode: 'cors'}); 
+        const imgJson = await imgData.json();
+
+        for (let obj in imgJson.query.pages){
+
+            let imgTitle = imgJson.query.pages[obj].images[1].title; 
+            const imgInfo = await fetch(`https://pt.wikipedia.org/w/api.php?action=query&origin=*&prop=imageinfo&iiprop=url&format=json&titles=${imgTitle}`, {mode: 'cors'}); 
+            const imgInfoJson = await imgInfo.json(); 
+
+            for (let obj in imgInfoJson.query.pages){
+                let url = imgInfoJson.query.pages[obj].imageinfo[0].url; 
+                setImg(url)
+            }
+        }
     }
 
     useEffect( () => {
         getWikiData()
-        setImg(`../imgs/${name}.svg`)
+        if (img === ''){
+            getImgfromWiki()
+        }
     }, [])
 
     return (

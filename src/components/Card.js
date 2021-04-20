@@ -8,7 +8,7 @@ const Card = (props) => {
             <h2>{props.title}</h2>
 
             <div style = {{width: "50%"}}>
-                <img src = {`./imgs/${props.img}.jpg`}  style = {{width: "50%"}}/>
+                <img src = {`./imgs/${props.img}.svg`}  style = {{width: "50%"}}/>
             </div>
 
             <p>{props.txt}</p>
