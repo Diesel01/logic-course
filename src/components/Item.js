@@ -39,9 +39,7 @@ const Item = () => {
 
     useEffect( () => {
         getWikiData()
-        if (img === ''){
-            getImgfromWiki()
-        }
+        if (img === "") { getImgfromWiki() }
     }, [])
 
     return (
