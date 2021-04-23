@@ -1,0 +1,16 @@
+{
+    "q1": {
+        "question": "O seu celular desperta no horário programado, porém você não está com disposição para levantar da cama. É possível dormir mais meia hora, mas isso custaria o tempo de tomar banho e tomar café da manhã. O que você faz?", 
+        "options": [
+            {"txt": "Levanta, mesmo sem disposição, para não se atrasar", "conseq": "#/q3"}
+        ]
+    
+    }, 
+
+    "q3": {
+        "question": "Quando você levanta da cama já não resta muito tempo para se arrumar. É necessário escolher entre tomar café da manhã e banho ou chegar na aula com atraso. Qual sua escolha?", 
+        "options": [
+            {"txt": "Sentar no assento preferencial", "conseq": "q5"}
+        ]
+    }
+}

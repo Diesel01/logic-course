@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 
 const Card = (props) => {
 
@@ -8,8 +8,8 @@ const Card = (props) => {
             <h2>{props.title}</h2>
 
             <div style = {{width: "50%"}}>
-                <img src = {`./imgs/${props.img}.svg`}  style = {{width: "50%"}}/>
-            </div>
+                <img src = {`./imgs/${props.img}.svg`} alt = {`${props.title}`} style = {{width: "50%"}}/>
+            </div> 
 
             <p>{props.txt}</p>
 
