@@ -18,7 +18,6 @@ const Item = () => {
             setTitle(txtJson.query.pages[obj].title); 
             setTxt(txtJson.query.pages[obj].extract)
         }
-        console.log("fish")
     }
 
     const getImgfromWiki = async () =>{
@@ -40,7 +39,7 @@ const Item = () => {
 
     useEffect( () => {
         getWikiData()
-        if (img === "") { getImgfromWiki() }
+        if (img === "") { getImgfromWiki() } // eslint-disable-next-line
     }, [])
 
     return (

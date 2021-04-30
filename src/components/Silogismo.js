@@ -35,9 +35,7 @@ const Silogismo = () => {
                 )
             })}
 
-            <button onClick = { 
-                    updateQuestion(selectedConseq)
-            }>
+            <button onClick = { () => {updateQuestion(selectedConseq)} }>
                 Enviar resposta
             </button>
 

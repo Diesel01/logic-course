@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import About from "./components/About.js";
 import Item from "./components/Item.js";
 import Linha from "./components/Linha.js";
+import Intro from "./components/Intro.js";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Switch>
           <Route path = "/" exact component = {About} />
           <Route path = "/linha" exact component = {Linha} />
+          <Route path = "/intro" exact component = {Intro} />
           <Route path = "/item/:name" component = {Item} />
         </Switch>
 
