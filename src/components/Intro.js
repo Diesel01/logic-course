@@ -50,13 +50,13 @@ const Intro = () => {
 
     useEffect( () => {
         let stringInducAnswers = JSON.stringify(inducAnswers)
-        storage.setItem( "inductionAnswers", stringInducAnswers)
+        storage.setItem( "answers", stringInducAnswers)
         //eslint-disable-next-line
     }, [inducAnswers])
 
     useEffect( () => {
         let stringfiedObj = JSON.stringify(justifications);
-        storage.setItem("inductionJustifications", stringfiedObj); 
+        storage.setItem("justifications", stringfiedObj); 
         // eslint-disable-next-line
     }, [justifications]); 
 
@@ -103,10 +103,11 @@ const Intro = () => {
                         handler = {setSelectedJustification}
                     />
                     <button
-                        onClick = { () => {
+                        onClick = { async () => {
                             setDisplayJustifs(false); 
-                            setJustifications( {...justifications, [inductionQ.id]: selectedJustification } );
+                            await setJustifications( {...justifications, [inductionQ.id]: selectedJustification } );
                             nextQuestion(); 
+                            //this callback needs to be async, because writing to localStorage takes longer than displaying info in "finished" state
                         }} 
                     >
                         Enviar justificação
@@ -117,7 +118,14 @@ const Intro = () => {
             }
 
             {finished ? 
-                <p>Vc terminou!</p>
+                <div>
+                    <p>Vc terminou!</p>
+                    <ul>Vc terminou! Essas foram suas respostas:
+                        <li>Primeira pergunta: {inducAnswers.induc0}. A sua justificativa foi: {justifications.induc0}</li>
+                        <li>Segunda pergunta: {inducAnswers.induc1}. A sua justificativa foi: {justifications.induc1}</li>
+                        <li>Terceira pergunta: {inducAnswers.induc2}. A sua justificativa foi: {justifications.induc2}</li>
+                    </ul>
+                </div> 
                 :
                 null
             }
