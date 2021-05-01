@@ -37,21 +37,20 @@ const Intro = () => {
     const [inductionQ, setInductionQ] = useState(questionsArray[0]); // object with text, altennatives, justifications and id props. 
 
     const [inducAnswers, setInducAnswers] = useState({});
-    const [selectedOption, setSelectedOption] = useState({}) 
+    const [selectedOption, setSelectedOption] = useState({}); 
 
-    const [displayJustifs, setDisplayJustifs] = useState(false)
+    const [justifications, setJustifications] = useState({});
+    const [selectedJustification, setSelectedJustification] = useState({});
 
-    const [justifications, setJustifications] = useState({})
-    const [selectedJustification, setSelectedJustification] = useState({})
-
-    const [finished, setFinished] = useState(false)
+    const [displayQuestion, setDisplayQuestion] = useState(true);
+    const [displayJustifs, setDisplayJustifs] = useState(false);
+    const [finished, setFinished] = useState(false);
 
     const storage = window.localStorage; 
 
     useEffect( () => {
         let stringInducAnswers = JSON.stringify(inducAnswers)
         storage.setItem( "inductionAnswers", stringInducAnswers)
-
         //eslint-disable-next-line
     }, [inducAnswers])
 
@@ -64,16 +63,20 @@ const Intro = () => {
    const nextQuestion = () => {
         for (let i = 0; i < questionsArray.length; i++){                        
             if (questionsArray[i].id === inductionQ.id){ 
-                questionsArray[i+1] === undefined ? setFinished(true) : setInductionQ(questionsArray[i+1]);   
+                if (questionsArray[i+1] === undefined){
+                    setFinished(true); 
+                    setDisplayQuestion(false)
+                } else {
+                    setInductionQ(questionsArray[i+1]); 
+                    setDisplayQuestion(true)
+                }
             }
         }
     }
 
     return ( 
         <>
-            {finished ? 
-                <p>Nerd, lul</p>            
-                :
+            {displayQuestion ? 
                 <div>
                     <Question 
                         question = {inductionQ}
@@ -82,14 +85,15 @@ const Intro = () => {
                     <button
                         onClick = {() => {
                             setDisplayJustifs(true); 
+                            setDisplayQuestion(false)
                             setInducAnswers( { ...inducAnswers, [inductionQ.id]: selectedOption.txt} ); 
-                            nextQuestion()
-                            console.log(selectedOption)
                         }}
                     >
                         Enviar resposta
                     </button>
                 </div>
+                :
+                null
             }
 
             {displayJustifs ? 
@@ -99,13 +103,21 @@ const Intro = () => {
                         handler = {setSelectedJustification}
                     />
                     <button
-                        onClick = {
-                            setJustifications( {...justifications, [inductionQ.id]: selectedJustification } )
-                        } 
+                        onClick = { () => {
+                            setDisplayJustifs(false); 
+                            setJustifications( {...justifications, [inductionQ.id]: selectedJustification } );
+                            nextQuestion(); 
+                        }} 
                     >
                         Enviar justificação
                     </button>
                 </div>
+                :
+                null
+            }
+
+            {finished ? 
+                <p>Vc terminou!</p>
                 :
                 null
             }
@@ -114,8 +126,7 @@ const Intro = () => {
 }
 export default Intro
 
-
-
+//////// Question component
 const Question = ( {question, handler} ) => {
 
     const handleClick = event => {
@@ -135,7 +146,7 @@ const Question = ( {question, handler} ) => {
     };
     
     return (
-        <div>
+        <div id = "question">
             <p>{question.txt}</p>
 
             {question.options.map( (option, index) => {
@@ -160,8 +171,7 @@ const Question = ( {question, handler} ) => {
     )
 }
 
-
-
+//////// Justification component
 const Justification = ( {option, handler} ) => { 
     
     const handleClick = event => {
@@ -172,6 +182,8 @@ const Justification = ( {option, handler} ) => {
     const justifications = option.justifs
     return (
        <div>
+            <p>Por que você selecionou "{option.txt}"?</p>
+
             {justifications.map( (justif, index) => {
                 return (
                     <div>  
