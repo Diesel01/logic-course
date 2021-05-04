@@ -4,9 +4,12 @@ import Card from "./Card";
 
 const Linha = () => {
     return (
-        <div 
-            style = { {display: "grid", gridTemplateColumns: "auto auto auto", alignContent: "center", justifyContent: "center", placeContent: "space-evenly"} }
-        >
+        <div style = {{
+                display: "grid", 
+                gridTemplateColumns: "auto auto auto", 
+                alignContent: "center", justifyContent: "center", 
+                placeContent: "space-evenly"
+        }}>
             <Link to = "/intro">
                 <Card { ...{title: "Introdução à lógica", img: 'intro-card', txt: "É que nem matemática, só que mais legal!"}} />
             </Link>

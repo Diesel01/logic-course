@@ -1,0 +1,58 @@
+.main-nav{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-list{
+    display: flex;
+    margin-right: 6%;
+}   
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav-item{
+    list-style-type: none;
+    margin-left: 4%;
+    margin-right: 25%;
+}
+
+.nav-pill :link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    color: black;
+    border: 0.75px solid #000000;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 8px;
+    width: 130%;
+    height: 90%;
+}
+
+.nav-pill :hover{
+    background:black;
+    color: white;
+}
+
+.nav-pill :active{
+    background:black;
+    color: white;
+}
+
+.selected-pill :link{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.75px solid #000000;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 8px;
+    width: 130%;
+    height: 90%;
+    background:black;
+    color: white;
+}

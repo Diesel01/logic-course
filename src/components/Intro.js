@@ -105,7 +105,7 @@ const Intro = () => {
                     <button
                         onClick = { async () => {
                             setDisplayJustifs(false); 
-                            await setJustifications( {...justifications, [inductionQ.id]: selectedJustification } );
+                            await setJustifications( {...justifications, [inductionQ.id]: selectedJustification} );
                             nextQuestion(); 
                             //this callback needs to be async, because writing to localStorage takes longer than displaying info in "finished" state
                         }} 
@@ -119,7 +119,6 @@ const Intro = () => {
 
             {finished ? 
                 <div>
-                    <p>Vc terminou!</p>
                     <ul>Vc terminou! Essas foram suas respostas:
                         <li>Primeira pergunta: {inducAnswers.induc0}. A sua justificativa foi: {justifications.induc0}</li>
                         <li>Segunda pergunta: {inducAnswers.induc1}. A sua justificativa foi: {justifications.induc1}</li>
