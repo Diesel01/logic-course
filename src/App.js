@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       <Router>
-        <Nav></Nav>
+        <Nav class = "main-nav"></Nav>
 
         <Switch>
           <Route path = "/" exact component = {About} />
