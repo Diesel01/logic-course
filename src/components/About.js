@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Nav from "./Nav";
 import "./styles/home.css"
 
 const About = () => { 
     return (
         <>
+            <Nav></Nav>
             <div className = "main-div">
                 <div className = "img-div">
                     <img className = "main-img" src = "./imgs/home.svg" alt = "Lógica"></img>
@@ -36,7 +38,20 @@ const About = () => {
             </div>
 
             <footer>
-                TODO: foofer
+                <div className = "main-footer">
+
+                    <div style = { {display: 'grid'} }>
+                        <h2 className = "quemSomos-title">Quem somos</h2>
+                    </div>
+
+                    <div style = { {marginLeft: "18%"} }>
+                        <p className = "quemSomos-txt"> 
+                            A Residência Pedagógica é um programa financiado pela CAPES que visa a inserção de estudantes de licenciatura no contexto escolar, 
+                            bem como a produção de aulas e materiais didáticos (tipo esse site!).
+                        </p>
+                    </div>
+
+                </div>
             </footer>
         </>
     )

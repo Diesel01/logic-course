@@ -1,3 +1,7 @@
+body{
+    margin: 0px
+}
+
 .main-div{
     display: grid;
     grid-template-columns: auto 62%;
@@ -57,4 +61,40 @@
 .home-link{
     color: white;
     font-family: "Roboto", sans-serif;
+}
+
+.main-footer{
+    display: grid;
+    grid-template-columns: auto 65%;
+    background-color: hsla(0, 2%, 92%, 0.4);
+    margin-top: 13%;
+    padding-bottom: 5%;
+}
+
+.quemSomos-title{
+    font-family: 'Lora', serif;
+    font-size: 209%;
+    font-style: normal;
+    font-weight: 400;
+    border: 2.2px solid #17619E;
+    transform: rotate(0.01deg);
+    justify-self: center;
+    border-bottom-style: solid;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    margin-left: 8%;
+    padding-bottom: 1%;
+}
+
+.quemSomos-txt{
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 106%;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    width: 76%;
+    margin-top: 3%;
 }
