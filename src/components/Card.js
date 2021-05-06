@@ -4,7 +4,7 @@ import "./styles/card.css"
 const Card = (props) => {
 
     return (
-        <div className = "card-div">
+        <div>
 
             <h2 className = "card-h2">{props.title}</h2>
             

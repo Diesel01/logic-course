@@ -1,3 +1,12 @@
+.main-div-linha{
+    display: grid;
+    grid-template-columns: auto auto auto; 
+    justify-content: space-evenly; 
+    align-content: center;
+    margin-top: 8%; 
+    margin-left: -3%
+}
+
 .card-div{
     display: grid;
     background: #FCFCFC;
@@ -7,6 +16,10 @@
     grid-template-rows: auto auto auto; 
     justify-content: center;
     align-content: center
+}
+
+.card-div :hover{
+    filter: blur(4px);
 }
 
 .card-h2{
@@ -27,4 +40,10 @@
     margin: auto; 
     padding-bottom: 5%; 
     text-align: center;
+}
+
+.locked-icon{
+    justify-self: center;
+    margin: 6%;
+    padding-left: 13%;    
 }
