@@ -1,0 +1,45 @@
+.nextQuestionBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.75px solid #000000;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 16px;
+    width: 20%;
+    height: 40%;
+    background: black;
+    color: white;
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+    font-size: 100%;
+    font-family: "Roboto";
+}
+
+.outer-question-div{
+    display: grid;
+    margin: auto; 
+    width: 50%;
+}
+
+.inner-question-div{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.question-txt{ 
+    justify-self: center;
+    font-family: "Lora";
+    font-size: 115%;
+}
+
+.option-div{
+    padding: 1%;
+}
+
+.option-label{
+    font-family: "Lora";
+    font-size: 115%;
+}

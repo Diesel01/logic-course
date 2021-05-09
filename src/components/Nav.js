@@ -4,20 +4,19 @@ import "./styles/nav.css"
 
 const Nav = () => { 
 
-    const [homeSelected, setHomeSelected] = useState(true)
-    const [indiceSelected, setIndiceSelected] = useState(false)
+    const [homeSelected, setHomeSelected] = useState()
+    const [indiceSelected, setIndiceSelected] = useState()
 
     useEffect( () => {
         const url = window.location.href; 
 
-        if (url.indexOf('/linha') === -1){
-            console.log('hi')
-            setHomeSelected(true);
-            setIndiceSelected(false)
-        }
-        else{
+        if (url.search(/linha|item|intro/) > 0){
+            console.log(url.search(/linha|item|intro/))
             setHomeSelected(false);
             setIndiceSelected(true) 
+        } else {
+            setHomeSelected(true);
+            setIndiceSelected(false);
         }
     }, [])
 

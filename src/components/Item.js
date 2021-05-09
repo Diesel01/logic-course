@@ -39,7 +39,8 @@ const Item = () => {
 
     useEffect( () => {
         getWikiData()
-        if (img === "") { getImgfromWiki() } // eslint-disable-next-line
+        if (img === "") { getImgfromWiki() } 
+        // eslint-disable-next-line
     }, [])
 
     return (
