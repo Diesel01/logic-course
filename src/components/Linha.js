@@ -10,7 +10,7 @@ const Linha = () => {
 
     useEffect( () => {
         storage.setItem("progress", progress)
-    }, [progress])
+    }, [progress, storage])
 
     return (
         <main>

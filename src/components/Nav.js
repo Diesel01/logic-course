@@ -11,7 +11,6 @@ const Nav = () => {
         const url = window.location.href; 
 
         if (url.search(/linha|item|intro/) > 0){
-            console.log(url.search(/linha|item|intro/))
             setHomeSelected(false);
             setIndiceSelected(true) 
         } else {

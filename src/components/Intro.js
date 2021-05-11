@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Nav from './Nav';
 import Question from "./Introduction course/Question";
 import Justification from "./Introduction course/Justification";
-import {InducExplanation} from "./Introduction course/Explanations";
+import {IntroTxt, InducExplanation} from "./Introduction course/Explanations";
 import './styles/Intro.css';
 
 const inductionsQuestionsArray = [
@@ -124,43 +124,7 @@ const Intro = () => {
 
             { displayIntroTxt ?
                 <div className="outer-question-div">
-                    <h1 className="intro-txt-title">
-                        Antes de começarmos...
-                    </h1>
-
-                    <p className='intro-hello'>
-                        Olá!
-                        <span role="img" aria-label="oi" style={{ padding: "1%" }}>👋</span>
-                    </p>
-
-                    <p className="intro-paragraph">
-                        Suponho que tenha caído aqui por um link.
-                        E provavelmente esse link estava no painel de sua turma ou algo do gênero, junto com alguma mensagem de convocação de sua professora,
-                        assim por diante.
-                    </p>
-
-                    <p className="intro-paragraph">
-                        Bom...
-                    </p>
-
-                    <p className="intro-paragraph">
-                        Não entenda isso como um inconveniente; apesar de certo ar formal que o nome “lógica” transpareça,
-                        acredite: trabalhamos bastante para que todo o conteúdo que você verá a seguir seja conveniente e engajante.
-                        Aqui, iremos te apresentar um jeito com o qual você pode pensar e defender as suas crenças de modo claro e bem-feito.
-                        Nossa principal tarefa sempre foi e sempre será <span className="highlight-txt">evitar o  raciocínio mal-feito</span>.
-                    </p>
-
-                    <p className="intro-paragraph">
-                        Todo esse “curso” que vocês terão será em cima de suas escolhas durante um caminho que preparamos para vocês.
-                        Não queremos obrigar vocês a nada, apenas queremos mostrar com mais calma e clareza algo que de certa maneira vocês já conhecem
-                        e já se depararam em outros contextos.
-                    </p>
-
-                    <p className="intro-paragraph">
-                        Nesse primeiro momento, iremos partir da noção que toda ideia precisa de uma <span className="highlight-txt">justificativa</span>.
-                        A lógica nada mais é o estudo de como certas ideias conseguem sustentar outras. Além disso, com a lógica podemos criar justificativas para nossas crenças.
-                        Para isso, agora vamos olhar como dois tipos de argumentos funcionam: <span className="highlight-txt">indução</span> e <span className="highlight-txt">dedução</span>.
-                    </p>
+                    <IntroTxt />
 
                     <button
                         onClick={() => {
@@ -224,7 +188,6 @@ const Intro = () => {
                                     nextQuestion();
                                     setSelectedOption({})
                                     await setSelectedJustification("")
-                                    console.log(selectedJustification)
                                     //this callback needs to be async, 
                                     //because writing to localStorage takes longer than displaying info in "finsishedInductions" state
                                 }
