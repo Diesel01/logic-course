@@ -20,7 +20,7 @@
 .outer-question-div{
     display: grid;
     margin: auto; 
-    width: 50%;
+    width: 70%;
 }
 
 .inner-question-div{
@@ -32,7 +32,7 @@
 .question-txt{ 
     justify-self: center;
     font-family: "Lora";
-    font-size: 115%;
+    font-size: 130%;
 }
 
 .option-div{
@@ -40,6 +40,40 @@
 }
 
 .option-label{
-    font-family: "Lora";
+    font-family: "Roboto";
+    font-weight: 300;
     font-size: 115%;
+}
+
+.intro-txt-title{
+    font-family: "Lora";
+    font-size: 225%;
+}
+
+.intro-hello{ 
+    font-family: "Roboto";
+    font-size: 160%;
+}
+
+.intro-paragraph{
+    font-family: "Roboto";
+    font-size: 109%;
+}
+
+@keyframes highlight {
+    0%   {background: white}
+    25%  {background: rgba(104, 225, 253, 0.25)}
+    50%  {background: rgba(104, 225, 253, 0.5)}
+    75%  {background: rgba(104, 225, 253, 0.75)}
+    100% {background: rgba(104, 225, 253, 1)}
+    /* from {background: white;}
+    to {background: yellow;} */
+}
+
+.highlight-txt{
+    background: white;
+    animation: highlight; 
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
 }
