@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Nav from './Nav';
 import Question from "./Introduction course/Question";
 import Justification from "./Introduction course/Justification";
-import {IntroTxt, InducExplanation} from "./Introduction course/Explanations";
+import {IntroTxt, InducExplanation, DeducExplanation} from "./Introduction course/Explanations";
 import './styles/Intro.css';
 
 const inductionsQuestionsArray = [
@@ -61,11 +61,11 @@ const deductionQuestionsArray = [
 
     {
         id: "deduc2",
-        txt: ["Toda filosofa usa sandalias.", "Maria e uma filosofa.", "Logo?"],
+        txt: ["Toda filósofa usa sandálias.", "Maria é uma filosofa.", "Logo?"],
         options: [
-            { opt: "deduc2_opt0", txt: "Maria usa sandalias", justifs: ["Pq sim", "Pq eu quis", "Whatever"] },
-            { opt: "deduc2_opt1", txt: "Filosofas nao usam sandalias", justifs: ["Pq sim", "Pq eu quis", "Whatever"] },
-            { opt: "deduc2_opt2", txt: "Platao e careca", justifs: ["Pq sim", "Pq eu quis", "Whatever"] }
+            { opt: "deduc2_opt0", txt: "Maria usa sandálias", justifs: ["Pq sim", "Pq eu quis", "Whatever"] },
+            { opt: "deduc2_opt1", txt: "Filósofas nao usam sandalias", justifs: ["Pq sim", "Pq eu quis", "Whatever"] },
+            { opt: "deduc2_opt2", txt: "Platão é careca", justifs: ["Pq sim", "Pq eu quis", "Whatever"] }
         ]
     },
 ]
@@ -222,11 +222,7 @@ const Intro = () => {
 
             {displayExplanation === "deduction" ?
                 <div className="outer-question-div">
-                    <ul>Vc terminou! Essas foram suas respostas:
-                        <li>Primeira pergunta: {inducAnswers.deduc0}. A sua justificativa foi: {justifications.deduc0}</li>
-                        <li>Segunda pergunta: {inducAnswers.deduc1}. A sua justificativa foi: {justifications.deduc1}</li>
-                        <li>Terceira pergunta: {inducAnswers.deduc2}. A sua justificativa foi: {justifications.deduc2}</li>
-                    </ul>
+                    <DeducExplanation answers = {inducAnswers} justifications={justifications} />
                 </div>
                 :
                 null

@@ -19,13 +19,17 @@ const About = () => {
 
                     <div>
                         <p className = "home-txt">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  
+                            Esse curso irá lhe ensinar a como pensar e argumentar mais claramente, com exemplos e exercícios voltados para o mundo real!
+                            {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.   */}
                         </p>
 
                         <p className = "home-txt">
-                            Odio ut sem nulla pharetra diam. Suspendisse in est ante in.
-                            WJlskfjdsf sfjlsdfj dfkgjflg fkgjsdlfk dfjs slfjsgf. 
-                            sdklgjlsgj, dsfklj fssgs dfkfk dsfosdgdgg
+                            Você aprenderá como decompor um argumento, 
+                            porque Aristóteles é tão importante e como ter
+                            discussões nas redes sociais.
+                            O presente curso foi criado com o apoio da Residência Pedagógica - Filosofia da UFSM.
+                            {/* WJlskfjdsf sfjlsdfj dfkgjflg fkgjsdlfk dfjs slfjsgf. 
+                            sdklgjlsgj, dsfklj fssgs dfkfk dsfosdgdgg */}
                         </p>
                     </div>
 
@@ -44,7 +48,7 @@ const About = () => {
                         <h2 className = "quemSomos-title">Quem somos</h2>
                     </div>
 
-                    <div style = { {marginLeft: "18%"} }>
+                    <div className = "quemSomos-txt-div">
                         <p className = "quemSomos-txt"> 
                             A Residência Pedagógica é um programa financiado pela CAPES que visa a inserção de estudantes de licenciatura no contexto escolar, 
                             bem como a produção de aulas e materiais didáticos (tipo esse site!).

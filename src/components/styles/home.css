@@ -87,6 +87,10 @@ body{
     padding-bottom: 1%;
 }
 
+.quemSomos-txt-div{
+    margin-left: 18%;
+}
+
 .quemSomos-txt{
     font-family: "Roboto", sans-serif;
     font-style: normal;
@@ -97,4 +101,38 @@ body{
     align-items: center;
     width: 76%;
     margin-top: 3%;
+}
+
+
+@media only screen and (max-width: 1000px){
+    .main-div { 
+        margin-top: 5%;
+        margin-right: 2%;
+        margin-left: 2%;
+        display: block;
+    }
+
+    .link-pill {
+        padding: 14px; 
+        width: 60%;
+        margin: 5%;
+    }
+
+    .main-footer {
+        margin-top: 5%;
+        grid-template-rows: auto auto;
+        grid-template-columns: none;
+    }
+
+    .quemSomos-title {
+        margin-left: 0%;
+    }
+
+    .quemSomos-txt-div{
+        margin-left: 9%;
+    }
+
+    .quemSomos-txt{
+        width: 100%;
+    }
 }

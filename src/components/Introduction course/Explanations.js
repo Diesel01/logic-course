@@ -75,7 +75,7 @@ const InducExplanation = ({ answers, justifications }) => {
     const [displayImg, setDisplayImg] = useState(false)
 
     return (
-        <div>
+        <>
             <h1 className = "intro-txt-title">Você terminou! Estas foram suas respostas:</h1> 
 
             <ul>
@@ -125,8 +125,60 @@ const InducExplanation = ({ answers, justifications }) => {
             </p>
 
             <p className = "intro-paragraph"> Agora vamos ver outras perguntas que são de um tipo diferente. </p>
+        </>
+    )
+}
+
+
+///////Deduction explanation
+const DeducExplanation = ({answers, justifications}) => {
+    return (
+        <div>
+            <h1 className = "intro-txt-title">Você terminou! Estas foram suas respostas:</h1> 
+
+            <ul>
+                <li className = "intro-paragraph">Primeira pergunta: {answers.deduc0}. A sua justificativa foi: {justifications.deduc0}</li>
+                <li className = "intro-paragraph"> Segunda pergunta: {answers.deduc1}. A sua justificativa foi: {justifications.deduc1}</li>
+                <li className = "intro-paragraph">Terceira pergunta: {answers.deduc2}. A sua justificativa foi: {justifications.deduc2}</li>
+            </ul>
+
+            <p className = "intro-paragraph">
+                Você certamente percebeu que não havia muita opção nessas perguntas. Uma vez que você entendeu o enunciado, 
+                a resposta se segue <span className = "highlight-txt">necessariamente</span>. 
+                É essa a principal característica de uma <span className = "highlight-txt">dedução</span>.
+            </p>
+
+            <p className = "intro-paragraph">
+                Ao contrário de induções, que podem ser classificadas como fortes ou fracas, deduções são sempre <span className = "highlight-txt">válidas</span>. 
+                Argumentos válidos são aqueles cuja conclusão se segue necessariamente das premissas - ao passo que isso não acontece em argumentos <span className = "highlight-txt">inválidos</span>.
+                Todas as perguntas que você respondeu agora foram argumentos válidos - você apenas selecionou as conclusões que se seguima das premissas.
+                Aqui está um exemplo de um argumento inválido:
+            </p>
+
+            <img 
+                src = "./imgs/meme_argInvalido.jpg" 
+                loading = "lazy"
+                alt = "Se brasileiro é uma nacionalidade, e argentino é uma nacionalidade, isso quer dizer que brasileiros são argentinos?" 
+                style = {{width: "50%", boxShadow: "7px 7px 0.4px 0px rgba(0, 0, 0, 0.15"}}
+            />
+
+            <p className = 'intro-paragraph'>
+                Imagine o caos que seria se brasileiros fossem argentinos! Vamos decompor esse argumento: 
+            </p>
+
+            <ul>
+                <li className = 'intro-paragraph'> <i>Premissa 1:</i> Brasileiro é uma nacionalidade;</li>
+                <li className = 'intro-paragraph'> <i>Premissa 2:</i> Argentino é uma nacionalidade;</li>
+                <li className = 'intro-paragraph'> <i>Logo, </i> brasileiros são argentinos.</li>
+            </ul>
+
+            <p className = "intro-paragraph">
+                Esse argumento é inválido porque, mesmo se as premissas 1 e 2 sejam verdadeiras, não é o caso que a conclusão seja verdadeira. Nesse caso, 
+                para que as ṕremissas realmente suportem a conclusão, precisaríamos de uma premissa adicional (algo como "todas as nacionalidades são iguais" - o que, 
+                óbviamente, é uma loucura).  
+            </p>
         </div>
     )
 }
 
-export {IntroTxt, InducExplanation} 
+export {IntroTxt, InducExplanation, DeducExplanation} 
