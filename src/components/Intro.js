@@ -131,7 +131,7 @@ const Intro = () => {
                             setDisplayIntroTxt(false);
                             setDisplayQuestion(true);
                         }}
-                        style={{ width: "24%", marginTop: "2%" }}
+                        style={{ marginTop: "2%" }}
                         className="nextQuestionBtn"
                     >
                         Clique aqui para continuar

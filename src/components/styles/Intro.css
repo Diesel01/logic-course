@@ -60,6 +60,16 @@
     font-size: 109%;
 }
 
+.induc-exp-img{
+    width: 35%;
+    box-shadow: 7px 9px 0.4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.deduc-exp-img{
+    width: 50%; 
+    box-shadow: 7px 7px 0.4px 0px rgba(0, 0, 0, 0.15);
+}
+
 @keyframes highlight {
     0%   {background: white}
     25%  {background: rgba(104, 225, 253, 0.25)}
@@ -76,4 +86,22 @@
     animation-duration: 1.5s;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
+}
+
+@media only screen and (max-width: 1000px){
+    .outer-question-div{
+        width: 95%;
+    }
+
+    .nextQuestionBtn{
+        width: 44%;
+    }
+
+    .induc-exp-img{
+        width: 100%;
+    }
+
+    .deduc-exp-img{
+        width: 100%;
+    }
 }

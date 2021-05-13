@@ -8,7 +8,7 @@ const Card = (props) => {
 
             <h2 className = "card-h2">{props.title}</h2>
             
-            <img src = {`./imgs/${props.img}.svg`} alt = {`${props.title}`}/>
+            <img className = "img-card" src = {`./imgs/${props.img}.svg`} alt = {`${props.title}`}/>
 
             <p className = "card-txt">
                 {props.txt}

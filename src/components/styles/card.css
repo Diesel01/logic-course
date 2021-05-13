@@ -7,6 +7,17 @@
     margin-left: -3%
 }
 
+.current-progress-card{
+    display: grid;
+    background: #FCFCFC;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 49px;
+    width: 115%; 
+    grid-template-rows: auto auto auto; 
+    justify-content: center;
+    align-content: center; 
+}
+
 .card-div{
     display: grid;
     background: #FCFCFC;
@@ -42,8 +53,58 @@
     text-align: center;
 }
 
+.comece-aqui{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #C72626;
+    color: white;
+    border: 0.75px solid;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 8px;
+    width: 40%;
+    height: 53%;
+    justify-self: center;
+    margin-left: 11%;
+    align-self: center;
+}
+
 .locked-icon{
     justify-self: center;
     margin: 6%;
     padding-left: 13%;    
+}
+
+@media only screen and (max-width: 1000px){
+    .main-div-linha{
+        grid-template-columns: none;
+    }
+
+    .card-div{
+        width: 90%;
+        margin: 6%;
+        margin-bottom: 6%;
+    }
+
+    .current-progress-card{
+        width: 90%;
+        margin: 6%;
+        margin-bottom: 6%;
+    }
+
+    .img-card{
+        width: 100%;
+    }
+
+    .locked-icon{
+        padding: 0px;
+        margin-top: 0%;
+        margin-bottom: 10%;
+    }
+
+    .comece-aqui{
+        align-self: none;
+        margin-left: 2%;
+    }
 }

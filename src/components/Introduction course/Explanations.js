@@ -108,10 +108,7 @@ const InducExplanation = ({ answers, justifications }) => {
                 hidden = {displayImg ? false : true}
                 loading = 'lazy' 
                 alt = "Surprise modafoca" 
-                style = {{                    
-                    width: "35%", 
-                    boxShadow: "7px 9px 0.4px 0px rgba(0, 0, 0, 0.15"
-                }} 
+                className = "induc-exp-img"
             />
 
             <p className = "intro-paragraph">
@@ -151,7 +148,7 @@ const DeducExplanation = ({answers, justifications}) => {
             <p className = "intro-paragraph">
                 Ao contrário de induções, que podem ser classificadas como fortes ou fracas, deduções são sempre <span className = "highlight-txt">válidas</span>. 
                 Argumentos válidos são aqueles cuja conclusão se segue necessariamente das premissas - ao passo que isso não acontece em argumentos <span className = "highlight-txt">inválidos</span>.
-                Todas as perguntas que você respondeu agora foram argumentos válidos - você apenas selecionou as conclusões que se seguima das premissas.
+                Todas as perguntas que você respondeu agora foram argumentos válidos - você apenas selecionou as conclusões que se seguiam das premissas.
                 Aqui está um exemplo de um argumento inválido:
             </p>
 
@@ -159,7 +156,7 @@ const DeducExplanation = ({answers, justifications}) => {
                 src = "./imgs/meme_argInvalido.jpg" 
                 loading = "lazy"
                 alt = "Se brasileiro é uma nacionalidade, e argentino é uma nacionalidade, isso quer dizer que brasileiros são argentinos?" 
-                style = {{width: "50%", boxShadow: "7px 7px 0.4px 0px rgba(0, 0, 0, 0.15"}}
+                className = "deduc-exp-img"
             />
 
             <p className = 'intro-paragraph'>

@@ -18,13 +18,19 @@ const Linha = () => {
             
              <div className = "main-div-linha">
 
-                <div>
-                    <div  className = "card-div">
+                <div style = {{display: "grid"}}>
+                    <div  className = { progress === "intro" ? "current-progress-card" : "card-div"}>
                         <Link to = "/intro">
                             <Card { ...{title: "Introdução à lógica", img: 'intro-card', txt: "É que nem matemática, só que mais legal!"}} />
                         </Link>
                     </div>
-                    {progress === "intro" ? null : <img src = "./imgs/lock.svg" alt = "Bloqueado" className = "locked-icon" />}
+                    {progress === "intro" ? 
+                        <div className = "comece-aqui">
+                            <p>Comece aqui!</p>
+                        </div> 
+                        : 
+                        null
+                    }
                 </div>
 
                 <div style = {{display: "grid"}}>
