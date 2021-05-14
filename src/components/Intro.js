@@ -3,6 +3,7 @@ import Nav from './Nav';
 import Question from "./Introduction course/Question";
 import Justification from "./Introduction course/Justification";
 import {IntroTxt, InducExplanation, DeducExplanation} from "./Introduction course/Explanations";
+import DraggableQuestions from "./Introduction course/DraggableQuestions"
 import './styles/Intro.css';
 
 const inductionsQuestionsArray = [
@@ -82,7 +83,7 @@ const Intro = () => {
     const [finsishedInductions, setFinsishedInductions] = useState(false);
     const [finishedDeductions, setFinsishedDeductions] = useState(true);
 
-    const [displayIntroTxt, setDisplayIntroTxt] = useState(true)
+    const [displayIntroTxt, setDisplayIntroTxt] = useState(false)
     const [displayQuestion, setDisplayQuestion] = useState(false);
     const [displayJustifs, setDisplayJustifs] = useState(false);
     const [displayExplanation, setDisplayExplanation] = useState("");
@@ -122,7 +123,9 @@ const Intro = () => {
         <>
             <Nav />
 
-            <main>
+            {/* <main> */}
+
+            <DraggableQuestions /> 
 
             { displayIntroTxt ?
                 <div className="outer-question-div">
@@ -230,7 +233,7 @@ const Intro = () => {
                 null
             }
 
-            </main>
+            {/* </main> */}
         </>
     )
 }
