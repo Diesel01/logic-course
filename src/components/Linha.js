@@ -13,8 +13,10 @@ const Linha = () => {
     }, [progress, storage])
 
     return (
-        <main>
+        <>
             <Nav/>
+            
+            <main>
             
              <div className = "main-div-linha">
 
@@ -24,6 +26,7 @@ const Linha = () => {
                             <Card { ...{title: "Introdução à lógica", img: 'intro-card', txt: "É que nem matemática, só que mais legal!"}} />
                         </Link>
                     </div>
+
                     {progress === "intro" ? 
                         <div className = "comece-aqui">
                             <p>Comece aqui!</p>
@@ -34,27 +37,39 @@ const Linha = () => {
                 </div>
 
                 <div style = {{display: "grid"}}>
-                    <div className = "card-div">
+                    <div className = { progress === "silogismo" ? "current-progress-card" : "card-div"}>
                         <Link to = "/item/silogismo">
                             <Card { ...{ title: "Silogismo", img: 'silogismo-card', txt: "Pense como Aristóteles!" } }/>
                         </Link>
                     </div>
-                    {progress === "silogismo" ? null : <img src = "./imgs/lock.svg" alt = "Bloqueado" className = "locked-icon" />}
+
+                    {progress === "silogismo" ? 
+                        null 
+                        : 
+                        <img src = "./imgs/lock.svg" alt = "Bloqueado" className = "locked-icon" />
+                    }
                 </div>
                 
 
                 <div style = {{display: "grid"}}> 
-                    <div className = "card-div">
+                    <div className = { progress === "logicaProposicional" ? "current-progress-card" : "card-div"}>
                         <Link to = "/item/lógica_proposicional">
                             <Card { ...{ title: "Lógica proposicional", img: "lógica_proposicional-card", txt: "Pense como um computador!" }} />
                         </Link>
                     </div>
-                    {progress === "logicaProposicional" ? null : <img src = "./imgs/lock.svg" alt = "Bloqueado" className = "locked-icon" />}
+
+                    {progress === "logicaProposicional" ? 
+                        null 
+                        : 
+                        <img src = "./imgs/lock.svg" alt = "Bloqueado" className = "locked-icon" />
+                    }
                 </div>
                 
             </div>
+
+            </main>
             
-        </main>
+        </>
     )
 }
 

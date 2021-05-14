@@ -7,7 +7,7 @@ import Intro from "./components/Intro.js";
 
 function App() {
   return (
-    <div>
+    <>
       <Router>
         {/* <Nav class = "main-nav"></Nav> */}
 
@@ -19,7 +19,7 @@ function App() {
         </Switch>
 
       </Router>
-    </div>
+    </>
   );
 }
 

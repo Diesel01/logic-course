@@ -122,6 +122,8 @@ const Intro = () => {
         <>
             <Nav />
 
+            <main>
+
             { displayIntroTxt ?
                 <div className="outer-question-div">
                     <IntroTxt />
@@ -227,6 +229,8 @@ const Intro = () => {
                 :
                 null
             }
+
+            </main>
         </>
     )
 }
