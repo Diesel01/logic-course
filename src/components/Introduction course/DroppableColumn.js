@@ -26,7 +26,6 @@ const DroppableColumn = props => {
             <p> <b> {props.column.title} </b> </p>
             
             <Droppable droppableId = {props.column.id} >
-            
                 {(provided) => (
                     <div
                         ref = {provided.innerRef}
@@ -35,16 +34,15 @@ const DroppableColumn = props => {
                         {props.tasks.map((task, index) => ( 
                             <DraggableAlternatives key = {task.id} task = {task} index = {index} />
                         ))}
-
-                        {displayCorrect ? <p>You're right!</p> : null}
-
-                        {displayFalse ? <p>Not yet...</p> : null}
                         
                         {provided.placeholder}
                     </div>
                 )}
-                
             </Droppable>
+
+            {displayCorrect ? <p>You're right!</p> : null}
+
+            {displayFalse ? <p>Not yet...</p> : null}
         </div>
     )
 }
