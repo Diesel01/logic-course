@@ -3,7 +3,7 @@ import Nav from './Nav';
 import Question from "./Introduction course/Question";
 import Justification from "./Introduction course/Justification";
 import {IntroTxt, InducExplanation, DeducExplanation} from "./Introduction course/Explanations";
-import DraggableQuestions from "./Introduction course/DraggableQuestions"
+import DraggableQuestions from "./Introduction course/ExerciseIntro"
 import './styles/Intro.css';
 
 const inductionsQuestionsArray = [
