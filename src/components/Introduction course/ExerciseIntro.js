@@ -69,8 +69,6 @@ const DraggableQuestions = () => {
 
             <h2 className = "question-draggable-h2">Arraste as proposições em ordem para formar argumentos:</h2>
 
-            {finished ? <p className = "finished-draggable-txt">Parabéns, vc terminou! <span aria-label="festinha" role="img">🎉</span></p> : null}
-
             <DragDropContext onDragEnd = {dragEndHandler}> 
             
                 {state.columnOrder.map(columnId => {
@@ -81,6 +79,8 @@ const DraggableQuestions = () => {
                 })}
                                 
             </DragDropContext>
+
+            {finished ? <p className = "finished-draggable-txt">Parabéns, você terminou! <span aria-label="festinha" role="img">🎉</span></p> : null}
 
         </>
     )

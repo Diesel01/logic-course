@@ -13,7 +13,7 @@ const DraggableAlternatives = props => {
                     className = "list-item-draggable"
                 >
                     <p>                         
-                        {props.task.content} ; {props.task.id}
+                        {props.task.content}
                     </p>
                 </span>
             )}    
