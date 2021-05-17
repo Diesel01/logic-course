@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import initialData from "./ExerciseDataIntro"; 
 import {DragDropContext} from 'react-beautiful-dnd'; 
 import DroppableColumn from './DroppableColumn';
+import "../styles/ExerciseIntro.css";
 
 const DraggableQuestions = () => {
     const [state, setState] = useState(initialData); 
@@ -30,7 +31,7 @@ const DraggableQuestions = () => {
         newTaskIds.splice(source.index, 1);
         newTaskIds.splice(destination.index, 0, draggableId);
 
-        const newCorrectValue =  isArrayEqual(column.correctAnswers, newTaskIds);
+        const newCorrectValue = isArrayEqual(column.correctAnswers, newTaskIds);
 
         const newColumn = {
             ...column,
@@ -64,6 +65,12 @@ const DraggableQuestions = () => {
 
     return (
         <>
+            <h1 className = "intro-txt-title"> Vamos exercitar um pouco o que você aprendeu.</h1>
+
+            <h2 className = "question-draggable-h2">Arraste as proposições em ordem para formar argumentos:</h2>
+
+            {finished ? <p className = "finished-draggable-txt">Parabéns, vc terminou! <span aria-label="festinha" role="img">🎉</span></p> : null}
+
             <DragDropContext onDragEnd = {dragEndHandler}> 
             
                 {state.columnOrder.map(columnId => {
@@ -75,7 +82,6 @@ const DraggableQuestions = () => {
                                 
             </DragDropContext>
 
-            {finished ? <p>Parabéns, vc terminou! <span aria-label="festinha" role="img">🎉</span></p> : null}
         </>
     )
 }

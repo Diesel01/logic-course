@@ -76,8 +76,6 @@
     50%  {background: rgba(104, 225, 253, 0.5)}
     75%  {background: rgba(104, 225, 253, 0.75)}
     100% {background: rgba(104, 225, 253, 1)}
-    /* from {background: white;}
-    to {background: yellow;} */
 }
 
 .highlight-txt{

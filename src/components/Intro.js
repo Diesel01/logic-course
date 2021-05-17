@@ -3,7 +3,7 @@ import Nav from './Nav';
 import Question from "./Introduction course/Question";
 import Justification from "./Introduction course/Justification";
 import {IntroTxt, InducExplanation, DeducExplanation} from "./Introduction course/Explanations";
-import DraggableQuestions from "./Introduction course/ExerciseIntro"
+import ExerciseIntro from "./Introduction course/ExerciseIntro"
 import './styles/Intro.css';
 
 const inductionsQuestionsArray = [
@@ -44,9 +44,9 @@ const deductionQuestionsArray = [
         id: "deduc0",
         txt: ["Todo meme é dank.", "Esse site é um meme.", "Logo?"],
         options: [
-            { opt: "deduc0_opt0", txt: "Eu sou dank", justifs: ["Pq sim", "Pq eu quis", "Whatever"] },
-            { opt: "deduc0_opt1", txt: "Esse site é dank", justifs: ["Pq sim", "Pq eu quis", "Whatever"] },
-            { opt: "deduc0_opt2", txt: "Esse site não é dank", justifs: ["Pq sim", "Pq eu quis", "Whatever"] }
+            { opt: "deduc0_opt0", txt: "Todo meme é esse site", justifs: ["Era a única alternativa que fazia sentido", "As outras alternativas não faziam sentido", "Eu chutei"] },
+            { opt: "deduc0_opt1", txt: "Esse site é dank", justifs: ["Era a única alternativa que fazia sentido", "As outras alternativas não faziam sentido", "Eu chutei"] },
+            { opt: "deduc0_opt2", txt: "Esse site não é dank", justifs: ["Era a única alternativa que fazia sentido", "As outras alternativas não faziam sentido", "Eu chutei"] }
         ]
     },
 
@@ -54,19 +54,19 @@ const deductionQuestionsArray = [
         id: "deduc1",
         txt: ["Todo youtuber fala alto.", "PC Siqueira é um youtuber.", "Logo?"],
         options: [
-            { opt: "deduc1_opt0", txt: "PC Siqueira é uma galinha", justifs: ["Pq sim", "Pq eu quis", "Whatever"] },
-            { opt: "deduc1_opt1", txt: "Felipe Neto fala alto", justifs: ["Pq sim", "Pq eu quis", "Whatever"] },
-            { opt: "deduc1_opt2", txt: "PC Siqueira fala alto", justifs: ["Pq sim", "Pq eu quis", "Whatever"] }
+            { opt: "deduc1_opt0", txt: "PC Siqueira é uma galinha", justifs: ["Era a única alternativa que fazia sentido", "As outras alternativas não faziam sentido", "Eu chutei"] },
+            { opt: "deduc1_opt1", txt: "Felipe Neto fala alto", justifs: ["Era a única alternativa que fazia sentido", "As outras alternativas não faziam sentido", "Eu chutei"] },
+            { opt: "deduc1_opt2", txt: "PC Siqueira fala alto", justifs: ["Era a única alternativa que fazia sentido", "As outras alternativas não faziam sentido", "Eu chutei"] }
         ]
     },
 
     {
         id: "deduc2",
-        txt: ["Toda filósofa usa sandálias.", "Maria é uma filosofa.", "Logo?"],
+        txt: ["Toda filósofa é inteligente.", "Djamila Ribeiro é uma filósofa.", "Logo?"],
         options: [
-            { opt: "deduc2_opt0", txt: "Maria usa sandálias", justifs: ["Pq sim", "Pq eu quis", "Whatever"] },
-            { opt: "deduc2_opt1", txt: "Filósofas nao usam sandalias", justifs: ["Pq sim", "Pq eu quis", "Whatever"] },
-            { opt: "deduc2_opt2", txt: "Platão é careca", justifs: ["Pq sim", "Pq eu quis", "Whatever"] }
+            { opt: "deduc2_opt0", txt: "Djamila Ribeiro é inteligente", justifs: ["Era a única alternativa que fazia sentido", "As outras alternativas não faziam sentido", "Eu chutei"] },
+            { opt: "deduc2_opt1", txt: "Djamila Ribeiro é uma jornalista", justifs: ["Era a única alternativa que fazia sentido", "As outras alternativas não faziam sentido", "Eu chutei"] },
+            { opt: "deduc2_opt2", txt: "Toda filósofa não é uma jornalista", justifs: ["Era a única alternativa que fazia sentido", "As outras alternativas não faziam sentido", "Eu chutei"] }
         ]
     },
 ]
@@ -123,9 +123,11 @@ const Intro = () => {
         <>
             <Nav />
 
-            {/* <main> */}
+            <main>
 
-            <DraggableQuestions /> 
+            <div className = "outer-question-div">
+                <ExerciseIntro />             
+            </div>           
 
             { displayIntroTxt ?
                 <div className="outer-question-div">
@@ -233,7 +235,7 @@ const Intro = () => {
                 null
             }
 
-            {/* </main> */}
+            </main>
         </>
     )
 }

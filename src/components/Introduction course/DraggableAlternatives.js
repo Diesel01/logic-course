@@ -6,13 +6,16 @@ const DraggableAlternatives = props => {
     return (
         <Draggable draggableId = {props.task.id} index = {props.index}>
             { provided => (
-                <p 
+                <span 
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
-                    ref = {provided.innerRef}
-                > 
-                    {props.task.content} ; {props.task.id}
-                </p>
+                    ref = {provided.innerRef} 
+                    className = "list-item-draggable"
+                >
+                    <p>                         
+                        {props.task.content} ; {props.task.id}
+                    </p>
+                </span>
             )}    
         </Draggable>
     )

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Droppable} from 'react-beautiful-dnd'; 
-import DraggableAlternatives from "./DraggableAlternatives"
+import DraggableAlternatives from "./DraggableAlternatives";
+import "../styles/ExerciseIntro.css";
 
 const DroppableColumn = props => {
     const [displayCorrect, setDisplayCorrect] = useState(false); 
@@ -22,8 +23,9 @@ const DroppableColumn = props => {
     }, [props, displayFalse, displayCorrect])
     
     return (
-        <div>
-            <p> <b> {props.column.title} </b> </p>
+        <div className = "outer-draggable-div">
+
+            {/* <p className = "question-draggable-txt"> <b> {props.column.title} </b> </p> */}
             
             <Droppable droppableId = {props.column.id} >
                 {(provided) => (
@@ -40,9 +42,9 @@ const DroppableColumn = props => {
                 )}
             </Droppable>
 
-            {displayCorrect ? <p>You're right!</p> : null}
+            {displayCorrect ? <span className = "right-txt"> <p className = "question-draggable-txt">Você acertou!</p> </span> : null}
+            {displayFalse ? <span className = "wrong-txt"> <p className = "question-draggable-txt">Ainda não...</p>  </span> : null}
 
-            {displayFalse ? <p>Not yet...</p> : null}
         </div>
     )
 }
