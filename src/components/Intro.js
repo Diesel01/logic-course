@@ -81,9 +81,9 @@ const Intro = () => {
     const [selectedJustification, setSelectedJustification] = useState("");
 
     const [finsishedInductions, setFinsishedInductions] = useState(false);
-    const [finishedDeductions, setFinsishedDeductions] = useState(true);
+    const [finishedDeductions, setFinsishedDeductions] = useState(false);
 
-    const [displayIntroTxt, setDisplayIntroTxt] = useState(false)
+    const [displayIntroTxt, setDisplayIntroTxt] = useState(true);
     const [displayQuestion, setDisplayQuestion] = useState(false);
     const [displayJustifs, setDisplayJustifs] = useState(false);
     const [displayExplanation, setDisplayExplanation] = useState("");
@@ -124,16 +124,13 @@ const Intro = () => {
             <Nav />
 
             <main>
-
-            <div className = "outer-question-div">
-                <ExerciseIntro />             
-            </div>           
-
+         
             { displayIntroTxt ?
                 <div className="outer-question-div">
                     <IntroTxt />
 
                     <button
+                        tabIndex = {0}
                         onClick={() => {
                             setDisplayIntroTxt(false);
                             setDisplayQuestion(true);
@@ -157,6 +154,7 @@ const Intro = () => {
                     />
                     <button
                         className="nextQuestionBtn"
+                        tabIndex = {0}
                         onClick={async () => {
                             if (selectedOption.opt === undefined) {
                                 alert("Opa! Selecione uma alternativa para continuar")
@@ -186,6 +184,7 @@ const Intro = () => {
                         :
                         <button
                             className="nextQuestionBtn"
+                            tabIndex = {0}
                             onClick={async () => {
                                 if (selectedJustification === "") {
                                     alert("Opa! Selecione uma alternativa para continuar")
@@ -213,10 +212,10 @@ const Intro = () => {
                     <InducExplanation answers={inducAnswers} justifications={justifications} />
                     <button
                         className="nextQuestionBtn"
+                        tabIndex = {0}
                         onClick={() => {
                             setInductionQ(deductionQuestionsArray[0]);
                             setDisplayQuestion(true);
-                            setFinsishedDeductions(false);
                             setDisplayExplanation("x")
                         }}
                     >
@@ -230,6 +229,24 @@ const Intro = () => {
             {displayExplanation === "deduction" ?
                 <div className="outer-question-div">
                     <DeducExplanation answers = {inducAnswers} justifications={justifications} />
+                    <button
+                        className = "nextQuestionBtn"
+                        tabIndex = {0}
+                        onClick = {() => {
+                            setFinsishedDeductions(true); 
+                            setDisplayExplanation("x");
+                        }}
+                    >
+                        Clique aqui para continuar
+                    </button>
+                </div>
+                :
+                null
+            }
+
+            {finishedDeductions ?      
+                <div className = "outer-question-div">
+                    <ExerciseIntro />             
                 </div>
                 :
                 null

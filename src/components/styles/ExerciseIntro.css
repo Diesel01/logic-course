@@ -40,6 +40,10 @@
     font-size: 109%;
 }
 
+.list-item-draggable:focus{
+    border: 2.2px solid #17619E ;
+}
+
 .right-txt{
     display: flex;
     justify-content: center;

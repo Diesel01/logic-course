@@ -41,28 +41,32 @@ const IntroTxt = () => {
                 Nesse primeiro momento, iremos partir da noção que toda ideia precisa de uma <span className="highlight-txt">justificativa</span>.
                 A lógica nada mais é o estudo de como certas ideias conseguem sustentar outras. Além disso, com a lógica podemos criar justificativas para nossas crenças.
                 Para isso, precisamos ter em mente algumas coisas bem importantes: 
-                <ul>
-                    <li>
-                        <b>Proposição:</b>  proposições são frases que <span className = "highlight-txt">afirmam</span> alguma coisa. 
-                        Elas não são perguntas nem ordens, porque elas servem para informar alguma coisa.
-                        Desse modo, proposições apenas podem ser  <span className = "highlight-txt">verdadeiras ou falsas</span>.
-                    </li>
+            </p>
 
-                    <li>
-                        <b>Premissas:</b> elas são proposições <span className = "highlight-txt">usadas para sustentar, ou justificar, outras proposições</span>.
-                    </li>
+            <ul className="intro-paragraph">
+                <li>
+                    <b>Proposição:</b>  proposições são frases que <span className = "highlight-txt">afirmam</span> alguma coisa. 
+                    Elas não são perguntas nem ordens, porque elas servem para informar alguma coisa.
+                    Desse modo, proposições apenas podem ser  <span className = "highlight-txt">verdadeiras ou falsas</span>.
+                </li>
 
-                    <li>
-                        <b>Conclusões:</b> elas são proposições que são sustentadas por premissas. Geralmente <span className = "highlight-txt">elas não são óbvias por si mesmas, por isso precisam de premissas para
-                            serem sustentadas</span>. Por exemplo, imagine que você está tentando convencer o seu amigo que cachorros são melhores que gatos. 
-                            Você pode dizer coisas como "cachorros são mais brincalh~oes", "gatos são mais difíceis de cuidar" ,"cachorros são mais companheiros" e etc. 
-                            Nesse caso, você está oferecendo premissas, ou razões, que sustentam a conclusão que "cachorros são melhores que gatos".
-                    </li>
+                <li>
+                    <b>Premissas:</b> elas são proposições <span className = "highlight-txt">usadas para sustentar, ou justificar, outras proposições</span>.
+                </li>
 
-                    <li>
-                        <b>Argumentos:</b> argumentos nada mais são que um conjunto de proposições, onde algumas servem de premissas, outras de conclusão.
-                    </li>
-                </ul>
+                <li>
+                    <b>Conclusões:</b> elas são proposições que são sustentadas por premissas. Geralmente <span className = "highlight-txt">elas não são óbvias por si mesmas, por isso precisam de premissas para
+                        serem sustentadas</span>. Por exemplo, imagine que você está tentando convencer o seu amigo que cachorros são melhores que gatos. 
+                        Você pode dizer coisas como "cachorros são mais brincalh~oes", "gatos são mais difíceis de cuidar" ,"cachorros são mais companheiros" e etc. 
+                        Nesse caso, você está oferecendo premissas, ou razões, que sustentam a conclusão que "cachorros são melhores que gatos".
+                </li>
+
+                <li>
+                    <b>Argumentos:</b> argumentos nada mais são que um conjunto de proposições, onde algumas servem de premissas, outras de conclusão.
+                </li>
+            </ul>
+
+            <p className="intro-paragraph">
                 Agora vamos olhar como dois tipos de argumentos funcionam: <span className="highlight-txt">indução</span> e <span className="highlight-txt">dedução</span>.
             </p>
         </>
