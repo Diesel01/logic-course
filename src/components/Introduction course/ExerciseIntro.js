@@ -51,8 +51,6 @@ const DraggableQuestions = () => {
     }
 
     useEffect(() => {
-        console.log(state.columns); 
-
         let finishedExercises = []; 
 
         for (let column in state.columns){
@@ -75,7 +73,7 @@ const DraggableQuestions = () => {
                     const column = state.columns[columnId];
                     const tasks = column.taskIds.map(taskId => state.tasks[taskId]);
 
-                    return <DroppableColumn key={column.id} column={column} tasks={tasks} correct={column.correct}/>
+                    return <DroppableColumn key={column.id} column={column} tasks={tasks} correct={column.correct} argumentType = {column.argumentType}/>
                 })}
                                 
             </DragDropContext>

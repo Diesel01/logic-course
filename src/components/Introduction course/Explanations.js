@@ -83,16 +83,26 @@ const InducExplanation = ({ answers, justifications }) => {
             <h1 className = "intro-txt-title">Você terminou! Estas foram suas respostas:</h1> 
 
             <ul>
-                <li className = "intro-paragraph">Primeira pergunta: {answers.induc0}. A sua justificativa foi: {justifications.induc0}</li>
-                <li className = "intro-paragraph">Segunda pergunta: {answers.induc1}. A sua justificativa foi: {justifications.induc1}</li>
-                <li className = "intro-paragraph">Terceira pergunta: {answers.induc2}. A sua justificativa foi: {justifications.induc2}</li>
+                <li className = "intro-paragraph"> <b>Primeira pergunta</b>: {answers.induc0} seria o tipo de música tocada na festa de Henrique. A sua justificativa foi: {justifications.induc0};</li>
+                <li className = "intro-paragraph"> <b>Segunda pergunta</b>: {answers.induc1} seria a próxima pessoa a te mandar uma mensagem. A sua justificativa foi: {justifications.induc1};</li>
+                <li className = "intro-paragraph"> <b>Terceira pergunta</b>: {answers.induc2} seria o curso escolhido por Martina. A sua justificativa foi: {justifications.induc2}.</li>
             </ul>
 
             <p className = "intro-paragraph"> Você percebeu como essas perguntas parecem fáceis? </p>
 
             <p className = "intro-paragraph">
                 No entanto, elas não são óbvias, porque sempre existe a possibilidade de que a resposta que você acha certa está errada.
-                Isso é o caso porque as <span className = "highlight-txt">premissas</span> (ou seja, as justificativas da sua resposta) nao sustentam completamente a conclusao.
+            </p>
+
+            <p className = "intro-paragraph">
+                Por exemplo, na primeira pergunta, você respondeu que {answers.induc0.toLowerCase()} era o estilo que seria tocado na festa de João. 
+                Isso é plausível de ser verdadeiro, já que {justifications.induc0.toLowerCase()}. Contudo, por mais que sua justificativa seja verdadeira, 
+                ainda existe a possibilidade de que não seja {answers.induc0.toLowerCase()} a música tocada na festa, mas qualquer outro tipo. Só porque {justifications.induc0.toLowerCase()}, 
+                não está eliminada a possibilidade de que seja tocado heavy metal festa, por exemplo. 
+            </p> 
+
+            <p className = "intro-paragraph">
+                Isso é o caso porque as <span className = "highlight-txt">premissas</span> (ou seja, as justificativas da sua resposta) não sustentam completamente a conclusão.
             </p>
 
             <p className = "intro-paragraph">
@@ -138,9 +148,9 @@ const DeducExplanation = ({answers, justifications}) => {
             <h1 className = "intro-txt-title">Você terminou! Estas foram suas respostas:</h1> 
 
             <ul>
-                <li className = "intro-paragraph">Primeira pergunta: {answers.deduc0}. A sua justificativa foi: {justifications.deduc0}</li>
-                <li className = "intro-paragraph"> Segunda pergunta: {answers.deduc1}. A sua justificativa foi: {justifications.deduc1}</li>
-                <li className = "intro-paragraph">Terceira pergunta: {answers.deduc2}. A sua justificativa foi: {justifications.deduc2}</li>
+                <li className = "intro-paragraph"> <b>Primeira pergunta</b>: {answers.deduc0}. A sua justificativa foi: {justifications.deduc0}</li>
+                <li className = "intro-paragraph"> <b>Segunda pergunta</b>: {answers.deduc1}. A sua justificativa foi: {justifications.deduc1}</li>
+                <li className = "intro-paragraph"> <b>Terceira pergunta</b>: {answers.deduc2}. A sua justificativa foi: {justifications.deduc2}</li>
             </ul>
 
             <p className = "intro-paragraph">
@@ -152,7 +162,7 @@ const DeducExplanation = ({answers, justifications}) => {
             <p className = "intro-paragraph">
                 Ao contrário de induções, que podem ser classificadas como fortes ou fracas, deduções são sempre <span className = "highlight-txt">válidas</span>. 
                 Argumentos válidos são aqueles cuja conclusão se segue necessariamente das premissas - ao passo que isso não acontece em argumentos <span className = "highlight-txt">inválidos</span>.
-                Todas as perguntas que você respondeu agora foram argumentos válidos - você apenas selecionou as conclusões que se seguiam das premissas.
+                As três últimas perguntas que você respondeu representam argumentos válidos - você apenas selecionou as conclusões que se seguiam das premissas.
                 Aqui está um exemplo de um argumento inválido:
             </p>
 
