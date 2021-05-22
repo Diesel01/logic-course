@@ -23,7 +23,6 @@ const About = () => {
                         <div>
                             <p className="home-txt">
                                 Esse curso irá lhe ensinar a como pensar e argumentar mais claramente, com exemplos e exercícios voltados para o mundo real!
-                            {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.   */}
                             </p>
 
                             <p className="home-txt">
@@ -31,8 +30,6 @@ const About = () => {
                                 porque Aristóteles é tão importante e como ter
                                 discussões nas redes sociais.
                                 O presente curso foi criado com o apoio da Residência Pedagógica - Filosofia da UFSM.
-                            {/* WJlskfjdsf sfjlsdfj dfkgjflg fkgjsdlfk dfjs slfjsgf. 
-                            sdklgjlsgj, dsfklj fssgs dfkfk dsfosdgdgg */}
                             </p>
                         </div>
 
