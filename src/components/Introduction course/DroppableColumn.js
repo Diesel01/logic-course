@@ -53,13 +53,13 @@ const DroppableColumn = props => {
             {!displayCorrect && displayCorrect !== undefined ? <span className = "wrong-txt"><p className = "question-draggable-txt">Ainda não...</p></span> : null}
         
             {showQuestion ?
-                <div>
-                    <p>Esse argumento é uma...</p>
+                <div className = "last-question-draggable-div">
+                    <p className = "paragraph-last-question">Esse argumento é uma...</p>
                     <input type = 'radio' name = {`question-${props.column.id}`} id = "deduc" onClick = {()=> {checkAnswer("deduc")}}/>
-                    <label name = "dedução" htmlFor = "deduc">Dedução</label>   
+                    <label className = 'label-draggable-last-question' name = "dedução" htmlFor = "deduc">Dedução</label>   
 
                     <input type = 'radio' name = {`question-${props.column.id}`} id = "induc" onClick = {()=> {checkAnswer("induc")}}/>
-                    <label name = "indução" htmlFor = "induc">Indução</label>
+                    <label className = 'label-draggable-last-question' name = "indução" htmlFor = "induc">Indução</label>
 
                     {correctEmojiAnswer && correctEmojiAnswer !== undefined ? <span aria-label = "resposta certa" role = "img">👍</span> : null}
                     {!correctEmojiAnswer && correctEmojiAnswer !== undefined? <span aria-label = "resposta errada" role = "img">👎</span> : null}                      

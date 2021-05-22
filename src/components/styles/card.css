@@ -85,6 +85,7 @@
     justify-self: center;
     margin-left: 11%;
     align-self: center;
+    font-family: 'Roboto';
 }
 
 .locked-icon{
@@ -105,7 +106,7 @@
     }
 
     .current-progress-card{
-        width: 90%;
+        width: 78%;
         margin: 6%;
         margin-bottom: 6%;
     }

@@ -17,9 +17,9 @@ const Intro = () => {
     const [selectedJustification, setSelectedJustification] = useState("");
 
     const [finsishedInductions, setFinsishedInductions] = useState(false);
-    const [finishedDeductions, setFinsishedDeductions] = useState(true); ////////////////////
+    const [finishedDeductions, setFinsishedDeductions] = useState(false); 
 
-    const [displayIntroTxt, setDisplayIntroTxt] = useState(false); ///////////////////////
+    const [displayIntroTxt, setDisplayIntroTxt] = useState(true);
     const [displayQuestion, setDisplayQuestion] = useState(false);
     const [displayJustifs, setDisplayJustifs] = useState(false);
     const [displayExplanation, setDisplayExplanation] = useState("");
@@ -71,7 +71,7 @@ const Intro = () => {
                             setDisplayIntroTxt(false);
                             setDisplayQuestion(true);
                         }}
-                        style={{ marginTop: "2%" }}
+                        style={{ marginTop: "2%"}}
                         className="nextQuestionBtn"
                     >
                         Clique aqui para continuar

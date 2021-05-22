@@ -38,6 +38,7 @@
 
 .option-div{
     padding: 1%;
+    text-align: center;
 }
 
 .option-label{
@@ -92,8 +93,13 @@
         width: 95%;
     }
 
+    .option-div{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
     .nextQuestionBtn{
-        width: 44%;
+        width: 68%;
     }
 
     .induc-exp-img{

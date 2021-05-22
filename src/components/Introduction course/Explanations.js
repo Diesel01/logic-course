@@ -44,24 +44,24 @@ const IntroTxt = () => {
             </p>
 
             <ul className="intro-paragraph">
-                <li>
+                <li style = {{marginBottom: "1%"}}>
                     <b>Proposição:</b>  proposições são frases que <span className = "highlight-txt">afirmam</span> alguma coisa. 
                     Elas não são perguntas nem ordens, porque elas servem para informar alguma coisa.
                     Desse modo, proposições apenas podem ser  <span className = "highlight-txt">verdadeiras ou falsas</span>.
                 </li>
 
-                <li>
+                <li style = {{marginBottom: "1%"}}>
                     <b>Premissas:</b> elas são proposições <span className = "highlight-txt">usadas para sustentar, ou justificar, outras proposições</span>.
                 </li>
 
-                <li>
+                <li style = {{marginBottom: "1%"}}>
                     <b>Conclusões:</b> elas são proposições que são sustentadas por premissas. Geralmente <span className = "highlight-txt">elas não são óbvias por si mesmas, por isso precisam de premissas para
                         serem sustentadas</span>. Por exemplo, imagine que você está tentando convencer o seu amigo que cachorros são melhores que gatos. 
-                        Você pode dizer coisas como "cachorros são mais brincalh~oes", "gatos são mais difíceis de cuidar" ,"cachorros são mais companheiros" e etc. 
+                        Você pode dizer coisas como "cachorros são mais brincalhões", "gatos são mais difíceis de cuidar" ,"cachorros são mais companheiros" e etc. 
                         Nesse caso, você está oferecendo premissas, ou razões, que sustentam a conclusão que "cachorros são melhores que gatos".
                 </li>
 
-                <li>
+                <li style = {{marginBottom: "1%"}}>
                     <b>Argumentos:</b> argumentos nada mais são que um conjunto de proposições, onde algumas servem de premissas, outras de conclusão.
                 </li>
             </ul>
