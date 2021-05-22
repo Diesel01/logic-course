@@ -3,38 +3,30 @@ import {Droppable} from 'react-beautiful-dnd';
 import DraggableAlternatives from "./DraggableAlternatives";
 import "../styles/ExerciseIntro.css";
 import '../styles/Intro.css';
-import { deductionQuestionsArray } from './QuestionsData';
 
 const DroppableColumn = props => {
-    const [displayCorrect, setDisplayCorrect] = useState(false); 
-    const [displayFalse, setDisplayFalse] = useState(false); 
+    const [displayCorrect, setDisplayCorrect] = useState(undefined); 
 
     const [showQuestion, setShowQuestion] = useState(false);
-    // const [correctEmojiAnswer, setCorrectEmojiAnswer] = useState(undefined); 
+    const [correctEmojiAnswer, setCorrectEmojiAnswer] = useState(undefined); 
 
     useEffect(() => {
         if(props.correct === undefined){
             return
-        } 
-
+        }
         if (props.correct){
-            // setDisplayCorrect(true);
-            // setDisplayFalse(false); 
+            setDisplayCorrect(true);
             setShowQuestion(true);
         } else {
-            // setDisplayFalse(true); 
-            // setDisplayCorrect(false);
+            setDisplayCorrect(false);
         }
-
-    }, [props, displayFalse, displayCorrect, showQuestion])
+    }, [props, displayCorrect, showQuestion])
 
     const checkAnswer = (answer) => {
         if (answer === props.argumentType){
-            setDisplayCorrect(true);
-            setDisplayFalse(false);
+            setCorrectEmojiAnswer(true);
         } else {
-            setDisplayCorrect(true);
-            setDisplayFalse(false);
+            setCorrectEmojiAnswer(false)            
         }
     }
     
@@ -42,7 +34,7 @@ const DroppableColumn = props => {
         <div className = "outer-draggable-div">
             
             <Droppable droppableId = {props.column.id} >
-                {(provided) => (
+                { provided => (
                     <div
                         ref = {provided.innerRef}
                         {...provided.droppableProps}
@@ -53,9 +45,13 @@ const DroppableColumn = props => {
                         
                         {provided.placeholder}
                     </div>
-                )}
-            </Droppable>
+                )} 
+           </Droppable>
             
+            {displayCorrect && displayCorrect !== undefined ? <span className = "right-txt"><p className = "question-draggable-txt">Você acertou!</p></span> : null}
+
+            {!displayCorrect && displayCorrect !== undefined ? <span className = "wrong-txt"><p className = "question-draggable-txt">Ainda não...</p></span> : null}
+        
             {showQuestion ?
                 <div>
                     <p>Esse argumento é uma...</p>
@@ -65,14 +61,14 @@ const DroppableColumn = props => {
                     <input type = 'radio' name = {`question-${props.column.id}`} id = "induc" onClick = {()=> {checkAnswer("induc")}}/>
                     <label name = "indução" htmlFor = "induc">Indução</label>
 
-                    {/* {correctEmojiAnswer ?  <span aria-label = "joinha" role = "img">👍</span> : <span aria-label = "resposta errada" role = "img">👎</span> }                       */}
+                    {correctEmojiAnswer && correctEmojiAnswer !== undefined ? <span aria-label = "resposta certa" role = "img">👍</span> : null}
+                    {!correctEmojiAnswer && correctEmojiAnswer !== undefined? <span aria-label = "resposta errada" role = "img">👎</span> : null}                      
                 </div>
             :
             null
             }
 
-            {displayCorrect ? <span className = "right-txt"> <p className = "question-draggable-txt">Você acertou!</p> </span> : null}
-            {displayFalse ? <span className = "wrong-txt"> <p className = "question-draggable-txt">Ainda não...</p>  </span> : null}
+
         
         </div>
     )
