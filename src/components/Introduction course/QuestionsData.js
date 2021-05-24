@@ -44,21 +44,21 @@ const inductionsQuestionsArray = [
 const deductionQuestionsArray = [
     {
         id: "deduc0",
-        txt: ["Todo meme é dank.", "Esse site é um meme.", "Logo?"],
+        txt: ["Todos memes usam imagens toscas.", "Muitos posts no Twitter são memes.", "Logo?"],
         options: [
-            { opt: "deduc0_opt0", txt: "Todo meme é esse site", justifs: ["Era a única alternativa que fazia sentido", "As outras alternativas não faziam sentido", "Eu chutei"] },
-            { opt: "deduc0_opt1", txt: "Esse site é dank", justifs: ["Era a única alternativa que fazia sentido", "As outras alternativas tinham palavras que não estavam no enunciado", "Se o enunciado fosse verdadeiro, essa alternativa também tinha que ser"] },
-            { opt: "deduc0_opt2", txt: "Esse site não é dank", justifs: ["Era a única alternativa que fazia sentido", "As outras alternativas não faziam sentido", "Eu chutei"] }
+            { opt: "deduc0_opt0", txt: "Alguns posts no Facebook são memes", justifs: ["Era a única alternativa que fazia sentido", "As outras alternativas não faziam sentido", "Eu chutei"] },
+            { opt: "deduc0_opt1", txt: "Muitos posts no Twitter usam imagens toscas", justifs: ["Era a única alternativa que fazia sentido", "As outras alternativas tinham palavras que não estavam no enunciado", "Se o enunciado fosse verdadeiro, essa alternativa também tinha que ser"] },
+            { opt: "deduc0_opt2", txt: "Esse site é um meme", justifs: ["Era a única alternativa que fazia sentido", "As outras alternativas não faziam sentido", "Eu chutei"] }
         ]
     },
 
     {
         id: "deduc1",
-        txt: ["Todo youtuber fala alto.", "PC Siqueira é um youtuber.", "Logo?"],
+        txt: ["Todo youtuber fala alto.", "Jovem Nerd é um youtuber.", "Logo?"],
         options: [
-            { opt: "deduc1_opt0", txt: "PC Siqueira é uma galinha", justifs: ["Era a única alternativa que fazia sentido", "As outras alternativas não faziam sentido", "Eu chutei"] },
-            { opt: "deduc1_opt1", txt: "Felipe Neto fala alto", justifs: ["Era a única alternativa que fazia sentido", "As outras alternativas não faziam sentido", "Eu chutei"] },
-            { opt: "deduc1_opt2", txt: "PC Siqueira fala alto", justifs: ["Era a única alternativa que fazia sentido", "As outras alternativas tinham palavras que não estavam no enunciado", "Se o enunciado fosse verdadeiro, essa alternativa também tinha que ser"] }
+            { opt: "deduc1_opt0", txt: "Jovem Nerd é uma galinha", justifs: ["Era a única alternativa que fazia sentido", "As outras alternativas não faziam sentido", "Eu chutei"] },
+            { opt: "deduc1_opt1", txt: "Leon fala alto", justifs: ["Era a única alternativa que fazia sentido", "As outras alternativas não faziam sentido", "Eu chutei"] },
+            { opt: "deduc1_opt2", txt: "Jovem Nerd fala alto", justifs: ["Era a única alternativa que fazia sentido", "As outras alternativas tinham palavras que não estavam no enunciado", "Se o enunciado fosse verdadeiro, essa alternativa também tinha que ser"] }
         ]
     },
 
