@@ -19,6 +19,7 @@ const DroppableColumn = props => {
             setShowQuestion(true);
         } else {
             setDisplayCorrect(false);
+            setShowQuestion(false); 
         }
     }, [props, displayCorrect, showQuestion])
 
@@ -61,14 +62,12 @@ const DroppableColumn = props => {
                     <input type = 'radio' name = {`question-${props.column.id}`} id = "induc" onClick = {()=> {checkAnswer("induc")}}/>
                     <label className = 'label-draggable-last-question' name = "indução" htmlFor = "induc">Indução</label>
 
-                    {correctEmojiAnswer && correctEmojiAnswer !== undefined ? <span aria-label = "resposta certa" role = "img">👍</span> : null}
-                    {!correctEmojiAnswer && correctEmojiAnswer !== undefined? <span aria-label = "resposta errada" role = "img">👎</span> : null}                      
+                    {correctEmojiAnswer && correctEmojiAnswer !== undefined ? <span aria-label = "resposta certa" role = "img" style = {{boxShadow: '1px 4px 5px lightgray'}}>👍</span> : null}
+                    {!correctEmojiAnswer && correctEmojiAnswer !== undefined? <span aria-label = "resposta errada" role = "img" style = {{boxShadow: '1px 4px 5px lightgray'}}>👎</span> : null}                      
                 </div>
             :
             null
             }
-
-
         
         </div>
     )

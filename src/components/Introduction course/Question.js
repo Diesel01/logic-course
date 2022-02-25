@@ -40,7 +40,7 @@ const Question = ({ question, handler }) => {
                         <input
                             name={question.id}
                             id={option.opt + "-" + index}
-                            key={option.opt + "-" + index}
+                            key={`input_${option.opt}-${index}`}
                             value={option.opt}
                             onClick={handleClick}
                             type="radio"
@@ -50,6 +50,7 @@ const Question = ({ question, handler }) => {
                             className="option-label"
                             htmlFor={option.opt + "-" + index}
                             name={question.id}
+                            key={`label_${option.opt}-${index}`}
                         >
                             {option.txt}
                         </label>

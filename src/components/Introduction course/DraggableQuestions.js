@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import initialData from "./ExerciseDataIntro"; 
+//import initialData from "./ExerciseDataIntro"; 
 import {DragDropContext} from 'react-beautiful-dnd'; 
 import DroppableColumn from './DroppableColumn';
 import "../styles/ExerciseIntro.css";
 
-const DraggableQuestions = () => {
-    const [state, setState] = useState(initialData); 
+const DraggableQuestions = ({data, progressAfter}) => {
+    const [state, setState] = useState(data); 
     const [finished, setFinished] = useState(false)
 
     const isArrayEqual = (a, b) => {
@@ -57,9 +57,12 @@ const DraggableQuestions = () => {
             state.columns[column].correct ? finishedExercises.push(column) : setFinished(false); 
         }
 
-        finishedExercises.length === Object.keys(state.columns).length ? setFinished(true) : setFinished(false)
+        if (finishedExercises.length === Object.keys(state.columns).length){
+            setFinished(true); 
+            window.localStorage.setItem("progress", `${progressAfter}`); //updates the progress item in localstorage, so that the user now has access to other courses in Indice
+        }
 
-    }, [state.columns])
+    }, [state.columns, progressAfter])
 
     return (
         <>
@@ -78,7 +81,14 @@ const DraggableQuestions = () => {
                                 
             </DragDropContext>
 
-            {finished ? <p className = "finished-draggable-txt">Parabéns, você terminou! <span aria-label="festinha" role="img">🎉</span></p> : null}
+            {finished ? 
+                <>
+                    <p className = "finished-draggable-txt">Parabéns, você terminou! <span aria-label="festinha" role="img">🎉</span></p> 
+                    <a href = "/linha">Clique aqui para continuar</a>
+                </>
+                : 
+                null
+            }
 
         </>
     )

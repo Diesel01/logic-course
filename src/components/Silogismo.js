@@ -1,45 +1,23 @@
-import React, {useState} from "react"; 
-
+import React from "react"; 
+import IntroSyl from "./Syllogism/IntroSyl";
+import FirstExp from "./Syllogism/FirstExp";
+import SecondExp from "./Syllogism/SecondExp";
+import questions from "./Syllogism/QuestionData"
+import SylDraggableQuestionsData from "./Syllogism/SylDraggableQuestionsData";
+import CourseTemplate from './CourseTemplate'; 
 
 const Silogismo = () => {
-
-    const [question, setQuestion] = useState(q1.question); 
-
-    const [options, setOptions] = useState(q1.options); 
-
-    const [selectedConseq, setSelectedConseq] = useState({})
-    
-    const updateQuestion = (id) => { 
-        setQuestion(id.question); 
-        setOptions(id.options); 
-    }
-
     return (
-        <form>
-            <p>{question}</p>
-
-            {options.map( (option, index) => {
-                return (
-                    <>
-                        <input 
-                            type = "radio" 
-                            value = {option.conseq} 
-                            name = {option.txt} 
-                            id = {`option${index}`}
-                            onClick = {() => {setSelectedConseq(option.conseq)}}    
-                        >
-                        </input>
-
-                        <label htmlFor = {`option${index}`}> {option.txt} </label> 
-                    </>
-                )
-            })}
-
-            <button onClick = { () => {updateQuestion(selectedConseq)} }>
-                Enviar resposta
-            </button>
-
-        </form>
+        <>
+            <CourseTemplate 
+                Intro = {IntroSyl}
+                FirstExplanation = {FirstExp}
+                SecondExplanation = {SecondExp}
+                QuestionsData = {questions}
+                DraggableQuestionsData = {SylDraggableQuestionsData}
+                progressAfter = 'logicaProposicional'
+            />       
+        </>
     )
 
 }

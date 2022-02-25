@@ -43,7 +43,8 @@
     width: 115%; 
     grid-template-rows: auto auto auto; 
     justify-content: center;
-    align-content: center
+    align-content: center; 
+    height: min-content;
 }
 
 .card-div :hover{

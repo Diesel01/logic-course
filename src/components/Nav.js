@@ -10,7 +10,7 @@ const Nav = () => {
     useEffect( () => {
         const url = window.location.href; 
 
-        if (url.search(/linha|item|intro/) > 0){
+        if (url.search(/linha|item|intro|silogismo/) > 0){
             setHomeSelected(false);
             setIndiceSelected(true) 
         } else {

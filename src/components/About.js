@@ -36,7 +36,7 @@ const About = () => {
                         <div className="link-pill">
                             <Link to="/linha" className="home-link">
                                 Clique aqui para começar
-                        </Link>
+                            </Link>
                         </div>
                     </div>
                 </div>

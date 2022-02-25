@@ -15,26 +15,8 @@ const IntroTxt = () => {
             </p>
 
             <p className="intro-paragraph">
-                Suponho que tenha caído aqui por um link.
-                E provavelmente esse link estava no painel de sua turma ou algo do gênero, junto com alguma mensagem de convocação de sua professora,
-                assim por diante.
-            </p>
-
-            <p className="intro-paragraph">
-                Bom...
-            </p>
-
-            <p className="intro-paragraph">
-                Não entenda isso como um inconveniente; apesar de certo ar formal que o nome “lógica” transpareça,
-                acredite: trabalhamos bastante para que todo o conteúdo que você verá a seguir seja conveniente e engajante.
                 Aqui, iremos te apresentar um jeito com o qual você pode pensar e defender as suas crenças de modo claro e bem-feito.
                 Nossa principal tarefa sempre foi e sempre será <span className="highlight-txt">evitar o  raciocínio mal-feito</span>.
-            </p>
-
-            <p className="intro-paragraph">
-                Todo esse “curso” que vocês terão será em cima de suas escolhas durante um caminho que preparamos para vocês.
-                Não queremos obrigar vocês a nada, apenas queremos mostrar com mais calma e clareza algo que de certa maneira vocês já conhecem
-                e já se depararam em outros contextos.
             </p>
 
             <p className="intro-paragraph">
@@ -142,15 +124,29 @@ const InducExplanation = ({ answers, justifications }) => {
 
 
 ///////Deduction explanation
-const DeducExplanation = ({answers, justifications}) => {
+const DeducExplanation = ({answers, correctAnswers}) => {
     return (
         <div>
             <h1 className = "intro-txt-title">Você terminou! Estas foram suas respostas:</h1> 
 
-            <ul>
-                <li className = "intro-paragraph"> <b>Primeira pergunta</b>: {answers.deduc0}. A sua justificativa foi: {justifications.deduc0}</li>
-                <li className = "intro-paragraph"> <b>Segunda pergunta</b>: {answers.deduc1}. A sua justificativa foi: {justifications.deduc1}</li>
-                <li className = "intro-paragraph"> <b>Terceira pergunta</b>: {answers.deduc2}. A sua justificativa foi: {justifications.deduc2}</li>
+            <ul className = "intro-paragraph">
+                <li> <b>Primeira pergunta</b>: {answers.deduc0}
+                    <ul>
+                        <li style={{ marginBottom: "1%" }}> <b>A alternativa correta era:</b> {correctAnswers.deduc0}</li>
+                    </ul> 
+                </li>
+
+                <li> <b>Segunda pergunta</b>: {answers.deduc1}
+                    <ul>
+                        <li style={{ marginBottom: "1%" }}> <b>A alternativa correta era:</b> {correctAnswers.deduc1}</li>
+                    </ul> 
+                </li>
+
+                <li> <b>Terceira pergunta</b>: {answers.deduc2}
+                   <ul>
+                        <li style={{ marginBottom: "1%" }}> <b>A alternativa correta era:</b> {correctAnswers.deduc2}</li>
+                    </ul> 
+                </li>
             </ul>
 
             <p className = "intro-paragraph">

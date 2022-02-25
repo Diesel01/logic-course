@@ -1,4 +1,4 @@
-const ExerciseDataIntro = {
+const SylDraggableQuestionsData = {
     tasks: {
       'a-1': { id: 'a-1', content: 'Elisabete de Boêmia é uma filósofa.' },
       'a-2': { id: 'a-2', content: 'Logo, Elisabete de Boêmia escreve bem.'},
@@ -56,4 +56,4 @@ const ExerciseDataIntro = {
     columnOrder: ['column-1', 'column-4', 'column-3', 'column-2'],
   };
   
-  export default ExerciseDataIntro;
+  export default SylDraggableQuestionsData;

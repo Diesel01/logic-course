@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import Nav from "./Nav";
 
 const Item = () => { 
 
@@ -39,12 +40,16 @@ const Item = () => {
 
     useEffect( () => {
         getWikiData()
-        if (img === "") { getImgfromWiki() } 
+        if (img === "") { 
+            getImgfromWiki() 
+        } 
         // eslint-disable-next-line
     }, [])
 
     return (
         <>
+            <Nav />
+
             <h1>{title}</h1>
 
             <div style = { {display: "grid", gridTemplateColumns: "auto 70%", alignItems: 'center'} }>
